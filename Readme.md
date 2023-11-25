@@ -10,7 +10,7 @@ O escopo do tutorial não é a segurança, sendo apenas uma demo.
 
 Requisitos:
 
-- Aplicativo Web (.NET8+) publicado em uma pasta.
+- [Aplicativo Web][TodoNet8v2] (.NET8+) publicado em uma pasta.
 - Habilitar o IIS no servidor.
 - Criar estrutura de pastas no inetpub para o aplicativo.
 - Liberar permissões nas pastas.
@@ -91,6 +91,7 @@ Requisitos:
 
 ### Bom é isso por enquanto. Então, boa sorte e bons códigos. 👍
 
+[TodoNet8v2]: https://github.com/thiagokj/TodoNet8v2
 [Publicando]: Docs/01.png
 [BuildGerada]: Docs/02.png
 [EXEApp]: Docs/03.png
