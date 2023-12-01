@@ -2,7 +2,7 @@
 
 Olá Dev. 😎
 
-Abaixo passo a passo para referência, mostrando como subir uma Minimal API no servidor Web IIS (Information Internet Services).
+Abaixo passo a passo para referência, mostrando como subir uma Minimal API e uma aplicação Web Blazor no servidor Web IIS (Information Internet Services).
 
 O IIS pode ser habilitado na maquina Dev ou servidor local.
 
@@ -89,6 +89,46 @@ Requisitos:
 
    ![Testando o App][TestandoApp]
 
+## Deploy de um Blazor App
+
+1. Crie seu projeto Blazor Web App e escolha o modo de renderização. Nesse exemplo, escolhi o Auto, que é o mais prático.
+
+   ![BlazorRenderAuto][BlazorRenderAuto]
+
+1. Ao criar o App Blazor, são gerados 2 projetos. Na publicação do App, é necessário apenas gerar o Release do projeto **Server**. O mesmo faz o empacotamento do projeto **Client** como uma dll.
+
+   No projeto gerado, temos o builder services com as 2 configurações para processar o App do lado do Servidor e do Cliente.
+
+   ![BlazorRenderServices][BlazorRenderServices]
+
+1. Para publicar de forma rápida, utilize o comando abaixo.
+
+   ```csharp
+   dotnet publish -c Release -o blazor-web-app
+   ```
+
+   ![BlazorPublish][BlazorPublish]
+
+1. Será gerada pasta dentro do projeto
+
+   ![BlazorPubFolder][BlazorPubFolder]
+
+1. Copie a pasta para o IIS e libere as permissões de segurança.
+
+   ![BlazorFolderSec][BlazorFolderSec]
+
+1. Abra o Gerenciador do IIS e crie um novo site.
+
+   ![NewSiteIIS][NewSiteIIS]
+
+1. Configure o nome do site e a porta ouvinte.
+
+   ![SiteCfgIIS][SiteCfgIIS]
+
+1. Abra o site no navegador para testar.
+
+   ![BlazorRunning][BlazorRunning]
+
 ### Bom é isso por enquanto. Então, boa sorte e bons códigos. 👍
 
 [TodoNet8v2]: https://github.com/thiagokj/TodoNet8v2
@@ -106,3 +146,11 @@ Requisitos:
 [ConfigurandoSite]: Docs/12.png
 [TestandoApp]: Docs/13.png
 [WindowsServerHostingDownload]: https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-8.0.0-windows-hosting-bundle-installer
+[BlazorRenderAuto]: Docs/BlazorApp/01-blazor-render-auto.png
+[BlazorRenderServices]: Docs/BlazorApp/02-blazor-render-services.png
+[BlazorPublish]: Docs/BlazorApp/03-blazor-publish.png
+[BlazorPubFolder]: Docs/BlazorApp/04-blazor-pub-folder.png
+[BlazorFolderSec]: Docs/BlazorApp/05-blz-sec.png
+[NewSiteIIS]: Docs/BlazorApp/06-iis-new-site.png
+[SiteCfgIIS]: Docs/BlazorApp/07-iis-site-cfg.png
+[BlazorRunning]: Docs/BlazorApp/08-blazor-running.png
