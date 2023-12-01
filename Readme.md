@@ -129,6 +129,8 @@ Requisitos:
 
    ![BlazorRunning][BlazorRunning]
 
+Esses são apenas exemplos para referência. Faça as modificações conforme seu ambiente.
+
 ### Bom é isso por enquanto. Então, boa sorte e bons códigos. 👍
 
 [TodoNet8v2]: https://github.com/thiagokj/TodoNet8v2
